@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-sm-offset-0 col-xs-12">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>{{ user_profile.authentication_user.username }}</h3>
+                    <p><strong>{% trans "First Name:" %}</strong> {{ user_profile.authentication_user.first_name }}</p>
+                    <p><strong>{% trans "Last Name:" %}</strong> {{ user_profile.authentication_user.last_name }}</p>
+                    <p><strong>{% trans "Email:" %}</strong> {{ user_profile.authentication_user.email }}</p>
+                    <p><strong>{% trans "Age:" %}</strong> {{ user_profile.age }}</p>
+                    <p><strong>{% trans "Gender:" %}</strong> {{ user_profile.gender }}</p>
+                    <p><strong>{% trans "Date joined:" %}</strong> {{ user_profile.authentication_user.date_joined }}</p>
+                    <p><strong>{% trans "Last login:" %}</strong> {{ user_profile.authentication_user.last_login }}</p>
+                    <h3>{% trans "Social Accounts registered" %}</h3>
+                    <ul>
+                        {% for account in user_accounts %}
+                            <li>
+                                {{ account.provider }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div><!-- thumbnail -->
+        </div><!-- col-md -->
+    </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}

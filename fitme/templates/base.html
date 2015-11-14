@@ -1,0 +1,42 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}BarApp{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="{% static 'common/css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'common/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'common/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'common/css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
+        <script src="{% static 'common/js/vendor/modernizr.min.js' %}"></script>
+        {% block extra-head-tags %}{% endblock %}
+    </head>
+    <body>
+
+        {% include 'navigation_bar.html' %}
+
+        <!--[if lt IE 8]>
+            <div class="container">
+                <div class="alert alert-info" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+                    Estás usando un <strong>navegador antiguo</strong>. Por favor, <a href="http://browsehappy.com/">actualizalo</a> para mejorar tu experiencia.
+                </div>
+            </div>
+        <![endif]-->
+
+        {% include 'messages.html' %}
+
+        {% block content %}{% endblock %}
+
+        <script src="{% static 'common/js/vendor/jquery.min.js' %}"></script>
+        <script src="{% static 'common/js/vendor/bootstrap.min.js' %}"></script>
+        <script src="{% static 'common/js/plugins.js' %}"></script>
+        {% block extra-script-tags %}{% endblock %}
+    </body>
+</html>

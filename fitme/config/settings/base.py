@@ -22,6 +22,7 @@ ALL_AUTH_APPS = (
 )
 
 PROJECT_APPS = (
+    'accounts',
     'common',
     'bootstrap3'
 )

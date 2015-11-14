@@ -37,11 +37,6 @@ class UserProfile(models.Model):
     ]
 
     authentication_user = models.OneToOneField(User)
-    age = models.PositiveSmallIntegerField(
-        _('User age'),
-        blank=True,
-        help_text=_('Write an age for the user profile')
-    )
     gender = models.CharField(
         _('User gender'),
         max_length=6,

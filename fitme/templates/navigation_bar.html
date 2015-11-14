@@ -33,14 +33,10 @@
                 </li><!-- dropdown -->
                 {% else %}
                 <li>
-                    {% comment %}
                     <a href="{% url 'account_login' %}">{% trans "Login" %}</a>
-                    {% endcomment %}
                 </li>
                 <li>
-                    {% comment %}
                     <a href="{% url 'account_signup' %}">{% trans "Register" %}</a>
-                    {% endcomment %}
                 </li>
                 {% endif %}
             </ul><!-- navbar-nav -->

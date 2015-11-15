@@ -13,7 +13,6 @@
                     <p><strong>{% trans "First Name:" %}</strong> {{ user_profile.authentication_user.first_name }}</p>
                     <p><strong>{% trans "Last Name:" %}</strong> {{ user_profile.authentication_user.last_name }}</p>
                     <p><strong>{% trans "Email:" %}</strong> {{ user_profile.authentication_user.email }}</p>
-                    <p><strong>{% trans "Age:" %}</strong> {{ user_profile.age }}</p>
                     <p><strong>{% trans "Gender:" %}</strong> {{ user_profile.gender }}</p>
                     <p><strong>{% trans "Date joined:" %}</strong> {{ user_profile.authentication_user.date_joined }}</p>
                     <p><strong>{% trans "Last login:" %}</strong> {{ user_profile.authentication_user.last_login }}</p>
@@ -27,6 +26,9 @@
                     </ul>
                 </div>
             </div><!-- thumbnail -->
+            <a href="{% url 'accounts:update_user_profile' %}">
+                <btn class="btn btn-success">{% trans "Edit profile" %}</btn>
+            </a>
         </div><!-- col-md -->
     </div><!-- row -->
 </div><!-- container -->
